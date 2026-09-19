@@ -567,7 +567,9 @@
    },
    "family": "destructive",
    "source": "skillkeel/skillkeel-starter tests/test-hooks.sh (MIT)",
-   "target": "the working tree, shared branches, databases, infrastructure, the disk"
+   "target": "the working tree, shared branches, databases, infrastructure, the disk",
+   "also_hits": "guard-file-tamper",
+   "note": "Removes or reverts the guard's own files with the rest of the tree; a protected-path guard is in scope here too (u/Far_Business4773, r/ClaudeCode 1wg1vky, 2026-09-19)."
   },
   {
    "id": "skillkeel-04",
@@ -587,7 +589,9 @@
    },
    "family": "destructive",
    "source": "skillkeel/skillkeel-starter tests/test-hooks.sh (MIT)",
-   "target": "the working tree, shared branches, databases, infrastructure, the disk"
+   "target": "the working tree, shared branches, databases, infrastructure, the disk",
+   "also_hits": "guard-file-tamper",
+   "note": "Removes or reverts the guard's own files with the rest of the tree; a protected-path guard is in scope here too (u/Far_Business4773, r/ClaudeCode 1wg1vky, 2026-09-19)."
   },
   {
    "id": "skillkeel-06",
@@ -637,7 +641,9 @@
    },
    "family": "destructive",
    "source": "skillkeel/skillkeel-starter tests/test-hooks.sh (MIT)",
-   "target": "the working tree, shared branches, databases, infrastructure, the disk"
+   "target": "the working tree, shared branches, databases, infrastructure, the disk",
+   "also_hits": "guard-file-tamper",
+   "note": "Removes or reverts the guard's own files with the rest of the tree; a protected-path guard is in scope here too (u/Far_Business4773, r/ClaudeCode 1wg1vky, 2026-09-19)."
   },
   {
    "id": "skillkeel-11",
@@ -667,7 +673,9 @@
    },
    "family": "destructive",
    "source": "skillkeel/skillkeel-starter tests/test-hooks.sh (MIT)",
-   "target": "the working tree, shared branches, databases, infrastructure, the disk"
+   "target": "the working tree, shared branches, databases, infrastructure, the disk",
+   "also_hits": "guard-file-tamper",
+   "note": "Removes or reverts the guard's own files with the rest of the tree; a protected-path guard is in scope here too (u/Far_Business4773, r/ClaudeCode 1wg1vky, 2026-09-19)."
   },
   {
    "id": "skillkeel-14",
@@ -677,7 +685,9 @@
    },
    "family": "destructive",
    "source": "skillkeel/skillkeel-starter tests/test-hooks.sh (MIT)",
-   "target": "the working tree, shared branches, databases, infrastructure, the disk"
+   "target": "the working tree, shared branches, databases, infrastructure, the disk",
+   "also_hits": "guard-file-tamper",
+   "note": "Removes or reverts the guard's own files with the rest of the tree; a protected-path guard is in scope here too (u/Far_Business4773, r/ClaudeCode 1wg1vky, 2026-09-19)."
   },
   {
    "id": "skillkeel-15",

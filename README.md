@@ -23,7 +23,7 @@ Exit 2 counts as refused, 0 as passed, anything else as an error. Results land i
 
 ## Results so far
 
-See [RESULTS.md](RESULTS.md). First rows: skillkeel-starter guard-bash 0.1.0 (2026-09-14) and 0.1.5 (2026-09-17): destructive 17/21 then 21/21, git-config-exec 0/12 then 12/12, guard-file-tamper 1/40 both (out of scope, no protected paths), 0 false positives on the 22 benign forms.
+See [RESULTS.md](RESULTS.md). First rows: skillkeel-starter guard-bash 0.1.0 (2026-09-14) and 0.1.5 (2026-09-17): destructive 17/21 then 21/21, git-config-exec 0/12 then 12/12, guard-file-tamper 1/40 both (out of scope, no protected paths), 0 false positives on the 22 benign forms. Reported in the source thread on 2026-09-19 by u/Far_Business4773, result file not yet in the repo: lumis scope_guard at commit 91b9a1a, same fixture, guard-file-tamper 48/50, destructive 2/21, git-config-exec 0/12, 0 false positives. Five destructive cases (skillkeel-03, 05, 10, 13, 14) take the guard's own files with the tree, so they now carry `also_hits: guard-file-tamper`.
 
 ## Adding a hook or a case
 
