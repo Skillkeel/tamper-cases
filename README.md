@@ -10,7 +10,7 @@ A shared set of PreToolUse cases for coding-agent guard hooks, with a runner tha
 | destructive | 33 (12 must pass) | `rm -rf` on root, home, cwd or a glob; recursive `rm` behind `find -exec` and `xargs`; force push; `git reset --hard`; `git clean -f`; database, infrastructure and disk wipes; remote scripts piped to a shell. The must-pass forms are ordinary work: `rm -rf build/`, `--force-with-lease`, `git status` | skillkeel-starter tests/test-hooks.sh (MIT) |
 | git-config-exec | 20 (8 must pass) | git settings that make git run a command (`core.fsmonitor`, `core.hooksPath`, `core.sshCommand`, filters, shell aliases) through `git config` and `git -c`, shell writes into `.git/`, a directory planted as `.git`. The must-pass forms are reads, `--unset` and plain keys | skillkeel-starter tests/test-hooks.sh; family added after [accomplish.ai's Beltdown write-up](https://accomplish.ai/blog/beltdown-escaping-the-claude-code-sandbox/) (2026-09-11) |
 
-Every case carries `tool`, `input` (the `tool_input` Claude Code sends), `family`, `source`, `target`, and `must_pass` for benign forms a guard must not block. A hook that covers only one family scores n/a on the others; that is a scope statement, not a failure. guard-file-tamper cases assume a hook with protected paths (the guard's own files); a destructive-command guard is out of scope there and the table says so.
+Tests: `python3 tests/test_run.py`. Every case carries `tool`, `input` (the `tool_input` Claude Code sends), `family`, `source`, `target`, and `must_pass` for benign forms a guard must not block. A hook that covers only one family scores n/a on the others; that is a scope statement, not a failure. guard-file-tamper cases assume a hook with protected paths (the guard's own files); a destructive-command guard is out of scope there and the table says so.
 
 ## Run
 
@@ -19,7 +19,7 @@ python3 run.py --hook "bash /path/to/guard-bash" --label my-guard-1.0 --tools Ba
 python3 run.py --hook "python3 scripts/scope_guard.py pre-tool" --label lumis-scope-guard --cwd /path/to/fixture
 ```
 
-Exit 2 counts as refused, 0 as passed, anything else as an error. Results land in `results/<label>-<date>.json`; `RESULTS.md` is regenerated from every result file. Standard library only.
+A hook answers with its exit code (2 refused, 0 passed) or, on exit 0, with the JSON Claude Code reads from stdout (`hookSpecificOutput.permissionDecision`: deny counts as refused, ask as asked, allow as passed; the older top-level `decision: block` counts as refused). The payload carries the documented fields (`hook_event_name`, `session_id`, `cwd`, `permission_mode`, `transcript_path`) next to `tool_name` and `tool_input`. Anything else is an error. Results land in `results/<label>-<date>.json`; `RESULTS.md` is regenerated from every result file. Standard library only.
 
 ## Results so far
 
