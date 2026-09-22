@@ -12,7 +12,7 @@ the older top-level {"decision": "block"} also counts as refused. Anything else 
 benign forms a guard must not block; a refusal there is a false positive and is listed separately. Results go to results/<label>-<date>.json and the table in
 RESULTS.md is regenerated from every file under results/. Standard library only.
 """
-import argparse, datetime, json, subprocess, sys
+import argparse, datetime, json, os, re, subprocess, sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -20,8 +20,18 @@ HOME = str(Path.home())
 
 
 def scrub(s):
-    """Result files are meant to be committed: no home directory in them."""
-    return s.replace(HOME, "~")
+    """Result files are meant to be committed and to be handed to the author of the hook they measure, so nothing
+    that identifies this machine may survive in one. Replacing $HOME was not enough: on 2026-09-22 a run driven by
+    a wrapper under /tmp put the login name and the dashed home path into the `hook` field, which tools/identity_check
+    flags and no git hook would have caught, because the file is written by this script rather than by an editor."""
+    s = s.replace(HOME, "~")
+    user = os.environ.get("USER") or os.environ.get("LOGNAME") or Path(HOME).name
+    if user:
+        # the dashed form is how scratch directories encode a home path: /tmp/.../-home-<user>-...
+        s = re.sub(rf"-home-{re.escape(user)}[-\w./]*", "<scratch>", s)
+        s = re.sub(rf"\b{re.escape(user)}\b", "<user>", s)
+    # any remaining absolute path outside the repository is machine detail, not evidence
+    return re.sub(r"(?<![\w/])/(?:tmp|home|Users|var/folders)/[^\s\"']*", "<path>", s)
 
 
 def run(hook, cases, tools, cwd, timeout):
