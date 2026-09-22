@@ -10,7 +10,8 @@ Each case is sent as the JSON Claude Code sends: {"hook_event_name": "PreToolUse
 "deny" = refused, "ask" = asked (the human decides; counted on its own, neither refused nor passed), "allow" = passed;
 the older top-level {"decision": "block"} also counts as refused. Anything else is an error. Cases marked must_pass are
 benign forms a guard must not block; a refusal there is a false positive and is listed separately. Results go to results/<label>-<date>.json and the table in
-RESULTS.md is regenerated from every file under results/. Standard library only.
+RESULTS.md is regenerated from every file directly under results/. A row waiting for its author's
+three clear days lives in results/held/, which this glob does not reach and .gitignore keeps untracked. Standard library only.
 """
 import argparse, datetime, json, os, re, subprocess, sys
 from pathlib import Path

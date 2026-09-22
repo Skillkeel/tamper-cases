@@ -1,6 +1,6 @@
 __pycache__/
 *.pyc
 
-# Held rows: a result file waits here, untracked, until the hook author has had the three clear days
+# Held rows wait in results/held/, untracked, until the hook author has had the three clear days
 # that results/NOTES.md promises. Committed early once (2026-09-22) by a git add -A; never again.
-results/*.held.json
+results/held/
