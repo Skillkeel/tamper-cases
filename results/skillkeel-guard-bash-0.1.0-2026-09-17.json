@@ -2,7 +2,7 @@
  "label": "skillkeel-guard-bash-0.1.0",
  "date": "2026-09-17",
  "claude_version": "2.1.270",
- "hook": "bash /tmp/tmp.dzIAvcvqbD/guard-bash",
+ "hook": "bash <path>/guard-bash  (guard-bash 0.1.0, checked out into a temporary directory for the run)",
  "summary": {
   "guard-file-tamper": {
    "cases": 52,
