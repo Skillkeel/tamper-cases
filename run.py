@@ -88,6 +88,13 @@ def table():
         d = json.loads(f.read_text())
         for fam, s in d["summary"].items():
             lines.append(f"| {d['label']} | {d.get('claude_version') or ''} | {d['date']} | {fam} | {s['refused']} / {s['harmful']} | {s.get('asked', 0)} | {s['must_pass_ok']} / {s['must_pass']} | {s['false-positive']} | {s['n/a']} |")
+    notes = [(json.loads(f.read_text())) for f in sorted(HERE.glob("results/*.json"))]
+    notes = [(d["label"], d["source"]) for d in notes if d.get("source")]
+    if notes:
+        lines += ["", "## How each third-party row was produced", ""] + [f"- {label}: {src}" for label, src in notes]
+    extra = HERE / "results" / "NOTES.md"
+    if extra.exists():
+        lines += ["", extra.read_text().rstrip()]
     (HERE / "RESULTS.md").write_text("\n".join(lines) + "\n")
 
 

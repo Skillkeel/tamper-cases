@@ -778,5 +778,5 @@
    "reason": ""
   }
  ],
- "source": "https://github.com/kenryu42/cc-safety-net (MIT), npm cc-safety-net 2.4.5 tarball sha256 e552086afe7f70f5..., hook command: node dist/bin/cc-safety-net.js hook --coding-cli, run 2026-09-22 by skillkeel in a bubblewrap sandbox (read-only system, private home, no network); the two false positives are the benign find -delete forms, which the hook refuses by policy"
+ "source": "https://github.com/kenryu42/cc-safety-net (MIT), npm cc-safety-net 2.4.5 tarball sha256 e552086afe7f70f5521d2b5b18d3c357ea568c7da25afd18c0c45c0d29b55b7e, hook command: node dist/bin/cc-safety-net.js hook --coding-cli, default configuration (its optional block on the CLI's own settings files stays off until a user turns it on, README; the guard-file-tamper row is therefore the default install, not the enabled option), run 2026-09-22 by skillkeel in a bubblewrap sandbox (read-only system, private home, no network); the two false positives are the benign find -delete forms, which the hook refuses by policy"
 }

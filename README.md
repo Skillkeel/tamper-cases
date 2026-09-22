@@ -25,9 +25,11 @@ A hook answers with its exit code (2 refused, 0 passed) or, on exit 0, with the 
 
 See [RESULTS.md](RESULTS.md). First rows: skillkeel-starter guard-bash 0.1.0 (2026-09-14) and 0.1.5 (2026-09-17): destructive 17/21 then 21/21, git-config-exec 0/12 then 12/12, guard-file-tamper 1/40 both (out of scope, no protected paths), 0 false positives on the 22 benign forms. lumis scope_guard (u/Far_Business4773, PR #1, 2026-09-20), two rows from its own fixture: commit 91b9a1a guard-file-tamper 48/50, destructive 2/21, git-config-exec 0/12; commit bcb8f44 after the fix for the five whole-tree cases: destructive 11/21, the rest unchanged, 0 false positives on both. The two hooks cover each other's blind spot: guard-bash has no protected-path rule, scope_guard sees only what touches a guarded path. Five destructive cases (skillkeel-03, 05, 10, 13, 14) take the guard's own files with the tree, so they now carry `also_hits: guard-file-tamper`.
 
+Third-party rows (2026-09-22): kenryu42/cc-safety-net 2.4.5 and karanb192/claude-code-hooks (config-guard and block-dangerous-commands, commit 888ef08), each run in a sandbox at its default configuration; the table's notes section states the configuration, the command line and what each hook says it covers, so a low count on a family the hook does not claim is read as scope, not as a defect. The method rules and the correction path are at the end of RESULTS.md (`results/NOTES.md`).
+
 ## Adding a hook or a case
 
-Open a PR. A hook row needs the exact command, its version and the Claude Code version it is paired with. A new case needs a source (thread, issue, write-up, or your own test) and a target; mark benign forms `must_pass`. Cases that only work with a fixture (files, history, symlinks) say so in `note`, and the runner's `--cwd` points at the fixture.
+Open a PR. A hook row needs the exact command, its version or commit and the Claude Code version it is paired with, plus the results JSON; a row Skillkeel did not reproduce is labelled "submitted by <author>, not reproduced by Skillkeel". A wrong number is fixed by issue or PR within 48 hours. A new case needs a source (thread, issue, write-up, or your own test) and a target; mark benign forms `must_pass`. Cases that only work with a fixture (files, history, symlinks) say so in `note`, and the runner's `--cwd` points at the fixture.
 
 ## License
 
