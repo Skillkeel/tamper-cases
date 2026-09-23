@@ -669,5 +669,7 @@
    "verdict": "passed",
    "reason": ""
   }
- ]
+ ],
+ "source": "submitted by momonanq (lumis-skills author) in PR #1 (https://github.com/skillkeel/tamper-cases/pull/1, merged 2026-09-20, commit d7b04ca), scope_guard at commit bcb8f44, run by its author on his own fixture; not reproduced by Skillkeel. Scope: a guard for its own protected files (scripts/, .lumis/, .claude/); its README claims neither the destructive nor the git-config-exec family.",
+ "config": "default; submitted by its author"
 }
