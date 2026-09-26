@@ -10,9 +10,9 @@
 - Right of reply: an author's comment on their own row is published beside it in their own words, unedited. The one reservation, so the promise is not open-ended: we will not publish a comment that names a third party, carries someone's personal data, or is unlawful to publish; in that case we say so and ask for a version we can run. Nothing is edited for tone, length or because we disagree with it.
 - Corrections: open an issue or PR on this repo; answered within 48 hours. A corrected row keeps the old one struck through with the date.
 
-## Not run: Dicklesworthstone/destructive_command_guard
+## dcg and its licence
 
-Not run as of 2026-09-22. Its LICENSE is MIT with a rider under which no rights are granted to "Restricted Parties", defined as OpenAI, Anthropic, their affiliates "and any person or entity acting directly or indirectly on behalf of, for the benefit of, or under the direction of any of the foregoing", and under which "use" includes "executing, benchmarking, testing, analyzing ... evaluation harness" (LICENSE at commit 1d20ec67ed, read 2026-09-22). This benchmark is run by a Claude agent; whether that reading applies is not ours to decide, so the author has been asked in writing. The author is welcome to run the corpus and submit a row.
+dcg (Dicklesworthstone/destructive_command_guard) is MIT with a rider that grants no rights to OpenAI, Anthropic, their affiliates or anyone acting "on behalf of, for the benefit of, or under the direction of" them, and counts benchmarking as use (LICENSE at commit 1d20ec67ed, read 2026-09-22). This benchmark is run by a Claude agent, so we asked the author first. The author gave written permission for the run, the row and an article on 2026-09-22 and was sent the results the same day. The row was then held out of the table for three clear days (23 to 25 September) and went up on 2026-09-26 as measured. The raw result file was pushed by mistake on 2026-09-22 and was public for 18 minutes before it came off (commit f48990d); the author was told the same evening.
 
 ## An instruction block that appeared in a tool result (2026-09-22)
 
