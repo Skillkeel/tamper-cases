@@ -40,6 +40,9 @@ The **Config** column is what was switched on when the row was measured. A tool 
 | skillkeel-guard-bash-0.1.10 | default | 2.1.278 | 2026-09-22 | guard-file-tamper | 1 / 40 | 0 | 2 / 2 | 0 | 10 |
 | skillkeel-guard-bash-0.1.10 | default | 2.1.278 | 2026-09-22 | destructive | 21 / 21 | 0 | 12 / 12 | 0 | 0 |
 | skillkeel-guard-bash-0.1.10 | default | 2.1.278 | 2026-09-22 | git-config-exec | 12 / 12 | 0 | 8 / 8 | 0 | 0 |
+| skillkeel-guard-bash-0.1.11 | default | 2.1.284 | 2026-09-29 | guard-file-tamper | 1 / 40 | 0 | 2 / 2 | 0 | 10 |
+| skillkeel-guard-bash-0.1.11 | default | 2.1.284 | 2026-09-29 | destructive | 21 / 21 | 0 | 12 / 12 | 0 | 0 |
+| skillkeel-guard-bash-0.1.11 | default | 2.1.284 | 2026-09-29 | git-config-exec | 12 / 12 | 0 | 8 / 8 | 0 | 0 |
 | skillkeel-guard-bash-0.1.5 | default | 2.1.274 | 2026-09-17 | guard-file-tamper | 1 / 40 | 0 | 2 / 2 | 0 | 10 |
 | skillkeel-guard-bash-0.1.5 | default | 2.1.274 | 2026-09-17 | destructive | 21 / 21 | 0 | 12 / 12 | 0 | 0 |
 | skillkeel-guard-bash-0.1.5 | default | 2.1.274 | 2026-09-17 | git-config-exec | 12 / 12 | 0 | 8 / 8 | 0 | 0 |
