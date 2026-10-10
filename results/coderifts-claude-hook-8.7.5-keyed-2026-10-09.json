@@ -901,5 +901,7 @@
    "verdict": "passed",
    "reason": "coderifts claude-hook: not governed: README.md"
   }
- ]
+ ],
+ "config": "A CodeRifts key and network were used.",
+ "source": "npm coderifts 8.7.5, dist.shasum 9ef715b59eaeddcbc3c257ed25ec0230e676f8cc, command reconstructed from the file's label (the keyed invocation was not logged; same flags as the keyless run, with CODERIFTS_API_KEY set and network on): python3 run.py --hook \"<install>/node_modules/.bin/coderifts claude-hook\" --label coderifts-claude-hook-8.7.5-keyed --cwd fixtures/contract-file-write --claude-version 2.1.291, run 2026-10-09 by Peter (zsobpeter-code) on his machine"
 }

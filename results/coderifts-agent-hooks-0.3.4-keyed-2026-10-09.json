@@ -901,5 +901,7 @@
    "verdict": "passed",
    "reason": ""
   }
- ]
+ ],
+ "config": "A CodeRifts key and network were used.",
+ "source": "npm @coderifts/agent-hooks 0.3.4, dist.shasum 88fe24ef2e9ef392d097ead4ce82b3df7b60e38e, command reconstructed from the file's label (the keyed invocation was not logged; same flags as the keyless run, with CODERIFTS_API_KEY set and network on): python3 run.py --hook \"node <realpath>/node_modules/@coderifts/agent-hooks/claude-code/hook.mjs\" --label coderifts-agent-hooks-0.3.4-keyed --cwd fixtures/contract-file-write --claude-version 2.1.291, run 2026-10-09 by Peter (zsobpeter-code) on his machine"
 }
