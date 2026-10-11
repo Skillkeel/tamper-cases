@@ -1,6 +1,6 @@
 ## Method
 
-- The corpus was 105 cases when this note was written: 53 from skillkeel-starter's own hook tests and 52 from lumis-skills' examples file (MIT, credited on each case), 12 of which (lumis-41 to lumis-52) were suggested by u/northbridgedev, the person account that builds Skillkeel. It is a test suite written by three guard authors, not a neutral sample; read the rows with that in mind. The contract-file-write family adds 16 cases (11 harmful, 5 must pass), so `cases.json` now holds 121.
+- The corpus is 121 cases: 53 from skillkeel-starter's own hook tests, 52 from lumis-skills' examples file (MIT, credited on each case), 12 of which (lumis-41 to lumis-52) were suggested by u/northbridgedev, the person account that builds Skillkeel, and the contract-file-write family of 16 cases by CodeRifts (11 harmful, 5 must pass). It is written by three guard authors and is not a neutral sample; read the rows with that in mind.
 - One row per family, no aggregate score, no ranking. A family a hook does not claim to cover is stated as outside its scope in the note above, not read as a defect.
 - Every third-party row pins the commit or release, the exact command line, the Claude Code version and the date, and keeps the full results JSON in `results/`. The verdict channel (exit 2, JSON deny, JSON ask) is checked individually on one case per hook before the run.
 - Third-party hooks run in a bubblewrap sandbox: read-only system, private home, no network, the hook's own files mounted read-only.
