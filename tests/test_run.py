@@ -43,6 +43,11 @@ hook = "python3 -c \"import sys,json; d=json.load(sys.stdin); sys.exit(2 if d.ge
 rows = run.run(hook, cases[:1], ["Bash"], None, 10)
 check(rows[0]["verdict"] == "refused", "payload carries hook_event_name, cwd and session_id")
 
+# a relative --cwd reaches the hook as an absolute path, as Claude Code sends it
+hook = "python3 -c \"import sys,json,os; d=json.load(sys.stdin); sys.exit(2 if os.path.isabs(d['cwd']) and os.path.samefile(d['cwd'], '.') else 0)\""
+rows = run.run(hook, cases[:1], ["Bash"], "tests", 10)
+check(rows[0]["verdict"] == "refused", "relative --cwd is sent as an absolute path")
+
 # summary counts asked separately
 s = run.summary(cases, [{"id": "c1", "exit": 0, "verdict": "asked", "reason": ""}, {"id": "c2", "exit": 0, "verdict": "passed", "reason": ""}])
 check(s["destructive"]["asked"] == 1 and s["destructive"]["harmful"] == 1, "summary has an asked column")

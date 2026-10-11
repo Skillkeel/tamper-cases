@@ -32,7 +32,7 @@ def scrub(s):
         s = re.sub(rf"-home-{re.escape(user)}[-\w./]*", "<scratch>", s)
         s = re.sub(rf"\b{re.escape(user)}\b", "<user>", s)
     # any remaining absolute path outside the repository is machine detail, not evidence
-    return re.sub(r"(?<![\w/])/(?:tmp|home|Users|var/folders)/[^\s\"']*", "<path>", s)
+    return re.sub(r"(?<![\w/])/(?:private/tmp|private/var/folders|tmp|home|Users|var/folders)/[^\s\"']*", "<path>", s)
 
 
 def run(hook, cases, tools, cwd, timeout):
@@ -41,7 +41,7 @@ def run(hook, cases, tools, cwd, timeout):
         if tools and c["tool"] not in tools:
             rows.append({"id": c["id"], "exit": None, "verdict": "n/a", "reason": f"hook does not handle {c['tool']}"}); continue
         payload = json.dumps({"hook_event_name": "PreToolUse", "session_id": "tamper-cases", "transcript_path": "",
-                              "cwd": cwd or str(HERE), "permission_mode": "default", "tool_name": c["tool"], "tool_input": c["input"]})
+                              "cwd": os.path.abspath(cwd) if cwd else str(HERE), "permission_mode": "default", "tool_name": c["tool"], "tool_input": c["input"]})
         decision = None
         try:
             r = subprocess.run(hook, shell=True, input=payload, capture_output=True, text=True, cwd=cwd, timeout=timeout)
