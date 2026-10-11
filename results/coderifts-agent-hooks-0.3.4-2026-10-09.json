@@ -903,5 +903,5 @@
   }
  ],
  "config": "No key and no network were used; keyless runs ask or refuse by design.",
- "source": "npm @coderifts/agent-hooks 0.3.4, dist.shasum 88fe24ef2e9ef392d097ead4ce82b3df7b60e38e, hook command: python3 run.py --hook \"node <realpath>/node_modules/@coderifts/agent-hooks/claude-code/hook.mjs\" --label coderifts-agent-hooks-0.3.4 --cwd fixtures/contract-file-write --claude-version 2.1.291, run 2026-10-09 by Peter (zsobpeter-code) on his machine"
+ "source": "npm @coderifts/agent-hooks 0.3.4, dist.shasum 88fe24ef2e9ef392d097ead4ce82b3df7b60e38e, hook command: python3 run.py --hook \"node <realpath>/node_modules/@coderifts/agent-hooks/claude-code/hook.mjs\" --label coderifts-agent-hooks-0.3.4 --cwd fixtures/contract-file-write --claude-version 2.1.291, run 2026-10-09 by Peter (zsobpeter-code) on his machine; submitted by CodeRifts, also reproduced by Skillkeel in a sandbox on 2026-10-11"
 }

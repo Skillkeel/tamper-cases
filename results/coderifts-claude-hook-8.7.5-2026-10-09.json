@@ -903,5 +903,5 @@
   }
  ],
  "config": "No key and no network were used; keyless runs ask or refuse by design.",
- "source": "npm coderifts 8.7.5, dist.shasum 9ef715b59eaeddcbc3c257ed25ec0230e676f8cc, hook command: python3 run.py --hook \"<install>/node_modules/.bin/coderifts claude-hook\" --label coderifts-claude-hook-8.7.5 --cwd fixtures/contract-file-write --claude-version 2.1.291, run 2026-10-09 by Peter (zsobpeter-code) on his machine"
+ "source": "npm coderifts 8.7.5, dist.shasum 9ef715b59eaeddcbc3c257ed25ec0230e676f8cc, hook command: python3 run.py --hook \"<install>/node_modules/.bin/coderifts claude-hook\" --label coderifts-claude-hook-8.7.5 --cwd fixtures/contract-file-write --claude-version 2.1.291, run 2026-10-09 by Peter (zsobpeter-code) on his machine; submitted by CodeRifts, also reproduced by Skillkeel in a sandbox on 2026-10-11"
 }
